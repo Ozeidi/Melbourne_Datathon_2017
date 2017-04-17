@@ -1,3 +1,19 @@
+from itertools import islice
+from time import clock
+import pandas as pd
+import os
+
+# if using jupyter:
+%pylab inline
+
+from geopy.geocoders import Nominatim
+geo = Nominatim()
+
+# from mpl_toolkits.basemap import Basemap
+
+#-------------------------------------
+lookups = 'D:/Documents/IPython/Datathon/MelbDatathon2017/lookups/'
+df_patients=pd.read_csv('{}patients.txt'.format(lookups), sep = '\t')
 pc=df_patients.postcode.unique()
 
 df_pc=pd.DataFrame(columns=['postcode'])
